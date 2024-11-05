@@ -39,7 +39,7 @@ final readonly class DompdfAdapter implements DOMDocumentToPdf, HtmlFileToPdf, H
     public function generateFromHtmlFile(SplFileInfo $file): StreamInterface
     {
         $dompdf = $this->buildDompdf();
-        $dompdf->loadHtmlFile($file->getPath());
+        $dompdf->loadHtmlFile($file->getPathname());
 
         return $this->createStream($dompdf);
     }
